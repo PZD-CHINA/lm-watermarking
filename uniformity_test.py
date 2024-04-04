@@ -12,7 +12,9 @@ def uniformity_test(file_name):
     # 计算范围内的最小值和最大值
     min_value = min(hash_values)
     max_value = max(hash_values)
-
+    print("min_value:",min_value)
+    print("max_value:",max_value)
+    
     # 确定频率的区间数
     num_bins = 100
     bin_size = (max_value - min_value) / num_bins
