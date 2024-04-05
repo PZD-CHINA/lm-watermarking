@@ -1,5 +1,6 @@
 import numpy as np
 from scipy.stats import binomtest
+import matplotlib.pyplot as plt
 
 def hex_to_binary(hex_str):
     # 将十六进制字符串转换为二进制字符串，并去掉前缀'0b'
@@ -30,6 +31,17 @@ def main(file_name):
 
     print("汉明距离列表：", hamming_distances)
     print("二项分布检验的p值：", p_value)
+
+    # 绘制汉明距离的图
+    plt.plot(range(len(hamming_distances)), hamming_distances, marker='o', markersize=1.5, linestyle='')
+    plt.title('Hamming Distances')
+    plt.xlabel('Hamming Distance')
+    plt.ylabel('Index')
+        
+    # 保存图片
+    plt.savefig('sac_test.png')
+
+    plt.show()
 
 if __name__ == "__main__":
     file_name = '10000_hash.txt'
